@@ -1,7 +1,7 @@
 import React from "react";
 
 function MainPage() {
-  document.title="Home"
+  document.title = "Home";
   return (
     <>
       <div className="container-fluid">
@@ -133,7 +133,7 @@ function MainPage() {
           </div>
           <div className="col-lg-4 col-6 text-right">
             <p className="m-0">Customer Service</p>
-            <h5 className="m-0">+012 345 6789</h5>
+            <h5 className="m-0">Nioooo yayaya</h5>
           </div>
         </div>
       </div>
@@ -472,7 +472,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-1.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-1.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -488,7 +492,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-2.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-2.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -504,7 +512,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-3.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-3.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -520,7 +532,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-4.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-4.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -536,7 +552,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-4.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-4.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -552,7 +572,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-3.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-3.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -568,7 +592,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-2.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-2.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -584,7 +612,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-1.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-1.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -600,7 +632,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-2.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-2.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -616,7 +652,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-1.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-1.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -632,7 +672,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-4.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-4.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -648,7 +692,11 @@ function MainPage() {
                   className="overflow-hidden"
                   style={{ width: 100, height: 100 }}
                 >
-                  <img className="img-fluid" src="/static/img/cat-3.jpg" alt="" />
+                  <img
+                    className="img-fluid"
+                    src="/static/img/cat-3.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="flex-fill pl-3">
                   <h6>Category Name</h6>
@@ -1461,11 +1509,11 @@ function MainPage() {
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope text-primary mr-3" />
-              info@example.com
+              vashistmayankk@gmail.com
             </p>
             <p className="mb-0">
               <i className="fa fa-phone-alt text-primary mr-3" />
-              +012 345 67890
+              Nioooo yayaya0
             </p>
           </div>
           <div className="col-lg-8 col-md-12">
@@ -1581,8 +1629,11 @@ function MainPage() {
                 Domain
               </a>
               . All Rights Reserved. Designed by
-              <a className="text-primary" href="https://htmlcodex.com">
-                HTML Codex
+              <a
+                className="text-primary"
+                href="https://www.linkedin.com/in/mayank182000"
+              >
+                Mayank Sharma
               </a>
             </p>
           </div>

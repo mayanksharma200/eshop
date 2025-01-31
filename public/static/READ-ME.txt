@@ -1,11 +1,11 @@
   =>  Template Name    : MultiShop - Online Shop Website Template
 
-  =>  Template Link    : https://htmlcodex.com/online-shop-website-template
+  =>  Template Link    : https://www.linkedin.com/in/mayank182000/online-shop-website-template
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+  =>  Template License : https://www.linkedin.com/in/mayank182000/license (or read the LICENSE.txt file)
 
-  =>  Template Author  : HTML Codex
+  =>  Template Author  : Mayank Sharma
 
-  =>  Author Website   : https://htmlcodex.com
+  =>  Author Website   : https://www.linkedin.com/in/mayank182000
 
-  =>  About HTML Codex : HTML Codex is one of the top creators and publishers of Free HTML templates, HTML landing pages, HTML email templates and HTML snippets in the world. Read more at ( https://htmlcodex.com/about-us )
+  =>  About Mayank Sharma : Mayank Sharma is one of the top creators and publishers of Free HTML templates, HTML landing pages, HTML email templates and HTML snippets in the world. Read more at ( https://www.linkedin.com/in/mayank182000/about-us )

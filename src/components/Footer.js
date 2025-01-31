@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
   return (
     <>
-    <div className="container-fluid bg-dark text-secondary mt-5 pt-5">
+      <div className="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div className="row px-xl-5 pt-5">
           <div className="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
             <h5 className="text-secondary text-uppercase mb-4">Get In Touch</h5>
@@ -17,11 +17,11 @@ function Footer() {
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope text-primary mr-3" />
-              info@example.com
+              vashistmayankk@gmail.com
             </p>
             <p className="mb-0">
               <i className="fa fa-phone-alt text-primary mr-3" />
-              +012 345 67890
+              Nioooo yayaya0
             </p>
           </div>
           <div className="col-lg-8 col-md-12">
@@ -137,8 +137,11 @@ function Footer() {
                 Domain
               </a>
               . All Rights Reserved. Designed by
-              <a className="text-primary" href="https://htmlcodex.com">
-                HTML Codex
+              <a
+                className="text-primary"
+                href="https://www.linkedin.com/in/mayank182000"
+              >
+                Mayank Sharma
               </a>
             </p>
           </div>
@@ -148,10 +151,10 @@ function Footer() {
         </div>
       </div>
       <a href="#" className="btn btn-primary back-to-top">
-      <i className="fa fa-angle-double-up" />
-    </a>
+        <i className="fa fa-angle-double-up" />
+      </a>
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
