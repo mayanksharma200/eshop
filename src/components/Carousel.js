@@ -26,7 +26,7 @@ function Carousel() {
                 >
                   <img
                     className="position-absolute w-100 h-100"
-                    src="/static/img/carousel-1.jpg"
+                    src="./static/img/carousel-1.jpg"
                     style={{ objectFit: "cover" }}
                   />
                   <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -53,7 +53,7 @@ function Carousel() {
                 >
                   <img
                     className="position-absolute w-100 h-100"
-                    src="/static/img/carousel-2.jpg"
+                    src="./static/img/carousel-2.jpg"
                     style={{ objectFit: "cover" }}
                   />
                   <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -80,7 +80,7 @@ function Carousel() {
                 >
                   <img
                     className="position-absolute w-100 h-100"
-                    src="/static/img/carousel-3.jpg"
+                    src="./static/img/carousel-3.jpg"
                     style={{ objectFit: "cover" }}
                   />
                   <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -106,7 +106,7 @@ function Carousel() {
           </div>
           <div className="col-lg-4">
             <div className="product-offer mb-30" style={{ height: 200 }}>
-              <img className="img-fluid" src="/static/img/offer-1.jpg" alt="" />
+              <img className="img-fluid" src="./static/img/offer-1.jpg" alt="" />
               <div className="offer-text">
                 <h6 className="text-white text-uppercase">Save 20%</h6>
                 <h3 className="text-white mb-3">Special Offer</h3>
@@ -116,7 +116,7 @@ function Carousel() {
               </div>
             </div>
             <div className="product-offer mb-30" style={{ height: 200 }}>
-              <img className="img-fluid" src="/static/img/offer-2.jpg" alt="" />
+              <img className="img-fluid" src="./static/img/offer-2.jpg" alt="" />
               <div className="offer-text">
                 <h6 className="text-white text-uppercase">Save 20%</h6>
                 <h3 className="text-white mb-3">Special Offer</h3>
