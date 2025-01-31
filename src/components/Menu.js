@@ -8,7 +8,7 @@ function Menu() {
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
               <a href="" className="text-decoration-none d-block d-lg-none">
                 <span className="h1 text-uppercase text-dark bg-light px-2">
-                  CETPA
+                  E-com
                 </span>
                 <span className="h1 text-uppercase text-light bg-primary px-2 ml-n1">
                   Shop
