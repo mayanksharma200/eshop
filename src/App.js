@@ -8,21 +8,22 @@ import RecentProducts from './components/RecentProducts';
 import Vendor from './components/Vendor';
 import Footer from './components/Footer';
 import FeaturedProducts from './components/FeaturedProducts';
+// import { Provider } from 'react-redux';
 
 function App() {
   document.title="Home";
   return (
     <>
-    <Topbar/>
-    <Navbar/>
-    <Carousel/>
-    <Featured/>
-    <FeaturedProducts/>
-    <Offer/>
-    <RecentProducts/>
-    <Vendor/>
-    <Footer/>
 
+        <Topbar />
+        <Navbar />
+        <Carousel />
+        <Featured />
+        <FeaturedProducts />
+        <Offer />
+        <RecentProducts />
+        <Vendor />
+        <Footer />
     </>
   );
 }
