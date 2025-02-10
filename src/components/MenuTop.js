@@ -1,7 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 
-function MenuTop() {
+function MenuTop(props) {
+  const cartCount = props.cartItems.length;
+  console.log(cartCount, 'MenuTopp')
   return (
     <>
       <div className="row bg-secondary py-1 px-xl-5">
@@ -98,7 +101,7 @@ function MenuTop() {
                   className="badge text-dark border border-dark rounded-circle"
                   style={{ paddingBottom: 2 }}
                 >
-                  0
+                  {cartCount}
                 </span>
               </a>
             </NavLink>
@@ -109,4 +112,9 @@ function MenuTop() {
   );
 }
 
-export default MenuTop
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state.cart,
+  };
+};
+export default connect(mapStateToProps)(MenuTop); 
