@@ -92,15 +92,17 @@ function MainPage() {
                   0
                 </span>
               </a>
-              <a href="" className="btn px-0 ml-2">
-                <i className="fas fa-shopping-cart text-dark" />
-                <span
-                  className="badge text-dark border border-dark rounded-circle"
-                  style={{ paddingBottom: 2 }}
-                >
-                  0
-                </span>
-              </a>
+              <NavLink to="/Cart">
+                <a href="" className="btn px-0 ml-2">
+                  <i className="fas fa-shopping-cart text-dark" />
+                  <span
+                    className="badge text-dark border border-dark rounded-circle"
+                    style={{ paddingBottom: 2 }}
+                  >
+                    0
+                  </span>
+                </a>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -273,15 +275,17 @@ function MainPage() {
                       0
                     </span>
                   </a>
-                  <a href="" className="btn px-0 ml-3">
-                    <i className="fas fa-shopping-cart text-primary" />
-                    <span
-                      className="badge text-secondary border border-secondary rounded-circle"
-                      style={{ paddingBottom: 2 }}
-                    >
-                      0
-                    </span>
-                  </a>
+                  <NavLink to="/Cart">
+                    <a href="" className="btn px-0 ml-3">
+                      <i className="fas fa-shopping-cart text-primary" />
+                      <span
+                        className="badge text-secondary border border-secondary rounded-circle"
+                        style={{ paddingBottom: 2 }}
+                      >
+                        0
+                      </span>
+                    </a>
+                  </NavLink>
                 </div>
               </div>
             </nav>

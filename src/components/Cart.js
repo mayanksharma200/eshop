@@ -3,8 +3,13 @@ import { connect } from "react-redux";
 
 
 function Cart(props) {
-  const cartItems = props.cartItems
-  console.log(cartItems, 'carttttttttttt  ')
+  const cartItems = props && props.cartItems
+  console.log(cartItems, 'carttttttttttt')
+  const totalCartItems = cartItems.map((value, index)=>{
+   return  parseInt(value.price - value.price * (value.discountPercentage / 100));
+  })
+  const subTotal = totalCartItems.reduce((acc, curr) => acc + curr, 0);
+  const shipCharge = 10
   return (
     <>
       <div className="container-fluid">
@@ -241,17 +246,17 @@ function Cart(props) {
               <div className="border-bottom pb-2">
                 <div className="d-flex justify-content-between mb-3">
                   <h6>Subtotal</h6>
-                  <h6>$150</h6>
+                  <h6>$ {subTotal}</h6>
                 </div>
                 <div className="d-flex justify-content-between">
                   <h6 className="font-weight-medium">Shipping</h6>
-                  <h6 className="font-weight-medium">$10</h6>
+                  <h6 className="font-weight-medium">$ {shipCharge}</h6>
                 </div>
               </div>
               <div className="pt-2">
                 <div className="d-flex justify-content-between mt-2">
                   <h5>Total</h5>
-                  <h5>$160</h5>
+                  <h5>$ {subTotal + shipCharge}</h5>
                 </div>
                 <button className="btn btn-block btn-primary font-weight-bold my-3 py-3">
                   Proceed To Checkout
