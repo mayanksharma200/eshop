@@ -1,22 +1,42 @@
+// working match case pop unique objects in array with duplicacy increments
+
 import React from "react";
 import { connect } from "react-redux";
 import { updateCart } from "../reduxEx/myReducer";
-import { useState } from "react";
-
 
 function SingleProduct(props) {
+  let cart = JSON.parse(JSON.stringify(props.cartItems));
+  let FinalProducts = {};
+  if (cart.length !== 0) {
+    for (let i = 0; i < cart.length; i++) {
+      let id = cart[i].id;
+
+      if (FinalProducts[id]) {
+        FinalProducts[id].duplicate += 1;
+      } else {
+        FinalProducts[id] = { ...cart[i], duplicate: 1 };
+      }
+    }
+  }
+
+  // Convert object to array
+  FinalProducts = Object.values(FinalProducts);
+
+  console.log(FinalProducts);
+
+  // console.log(IDs, 'iddd');
   console.log(props);
-  const [cart, setcart] = useState([])
-  const product = props.product;
-  function onClick(data){
-    // console.log('check', data);
+  console.log(FinalProducts, "finallproduct");
+
+  function onClick(data) {
+    console.log("check", data);
     props.update(data);
   }
   return (
     <>
-      {product
-        ? product.map((value, index) => (
-            <div className="col-lg-4 col-md-4 col-sm-6 pb-1" key={index}>
+      {props
+        ? props.product.map((value, index) => (
+            <div className="col-lg-4 col-md-4 col-sm-6 pb-1" key={value.id}>
               <div className="product-item bg-light mb-4">
                 <div className="product-img position-relative overflow-hidden">
                   <img

@@ -28,7 +28,7 @@ function Cart(props) {
               <tbody className="align-middle">
                 {props &&
                   cartItems.map((value, index) => (
-                    <tr key={index}>
+                    <tr key={value.id}>
                       <td className="align-middle">
                         <img
                           src="img/product-1.jpg"
