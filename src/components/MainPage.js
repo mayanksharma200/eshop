@@ -135,7 +135,7 @@ function MainPage() {
           </div>
           <div className="col-lg-4 col-6 text-right">
             <p className="m-0">Customer Service</p>
-            <h5 className="m-0">Nioooo yayaya</h5>
+            <h5 className="m-0">1234567890</h5>
           </div>
         </div>
       </div>
@@ -1509,15 +1509,19 @@ function MainPage() {
             </p>
             <p className="mb-2">
               <i className="fa fa-map-marker-alt text-primary mr-3" />
-              123 Street, New York, USA
+              New Delhi, India
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope text-primary mr-3" />
               vashistmayankk@gmail.com
             </p>
+            <p className="mb-2">
+              <i className="fab fa-linkedin-in" />
+              vashistmayankk@gmail.com
+            </p>
             <p className="mb-0">
               <i className="fa fa-phone-alt text-primary mr-3" />
-              Nioooo yayaya0
+              12345678900
             </p>
           </div>
           <div className="col-lg-8 col-md-12">
@@ -1602,7 +1606,7 @@ function MainPage() {
                   </div>
                 </form>
                 <h6 className="text-secondary text-uppercase mt-4 mb-3">
-                  Follow Us
+                  Social Contacts
                 </h6>
                 <div className="d-flex">
                   <a className="btn btn-primary btn-square mr-2" href="#">

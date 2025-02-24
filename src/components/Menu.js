@@ -33,9 +33,9 @@ function Menu() {
                   <NavLink to="/Products" className="nav-item nav-link">
                     Products
                   </NavLink>
-                  <NavLink to="/Products/ProductDetails"  className="nav-item nav-link">
+                  {/* <NavLink to="/Products/ProductDetails"  className="nav-item nav-link">
                     Product Details
-                  </NavLink>
+                  </NavLink> */}
                   <div className="nav-item dropdown">
                     <a
                       href="#"

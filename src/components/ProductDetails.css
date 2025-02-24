@@ -1,0 +1,298 @@
+/* General Styles */
+.product-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.product-details-grid {
+  display: flex;
+  gap: 40px;
+}
+
+.product-images {
+  flex: 1;
+}
+
+.product-info {
+  flex: 1;
+}
+
+/* Custom Carousel */
+.custom-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Product Title and Brand */
+.product-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-brand {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Product Rating */
+.product-rating {
+  margin-bottom: 20px;
+}
+
+.rating-badge {
+  background-color: #ffc107;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Price Section */
+.price-section {
+  margin-bottom: 20px;
+}
+
+.discounted-price {
+  font-size: 2rem;
+  color: #d9534f;
+  margin: 0;
+}
+
+.original-price {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+  margin: 5px 0;
+}
+
+.discount-percentage {
+  font-size: 1rem;
+  color: #5cb85c;
+  margin: 0;
+}
+
+/* Availability */
+.availability {
+  margin-bottom: 20px;
+}
+
+.availability-status {
+  font-size: 1rem;
+  color: #5cb85c;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-to-cart,
+.buy-now {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.buy-now {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.add-to-cart:hover,
+.buy-now:hover {
+  opacity: 0.9;
+}
+
+/* Description */
+.description {
+  margin-bottom: 20px;
+}
+
+.description h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Dimensions */
+.dimensions {
+  margin-bottom: 20px;
+}
+
+.dimensions h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dimensions p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Shipping Info */
+.shipping-info {
+  margin-bottom: 20px;
+}
+
+.shipping-info h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.shipping-info p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Return Policy */
+.return-policy {
+  margin-bottom: 20px;
+}
+
+.return-policy h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.return-policy p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Warranty Info */
+.warranty-info {
+  margin-bottom: 20px;
+}
+
+.warranty-info h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.warranty-info p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Tags */
+.tags {
+  margin-bottom: 20px;
+}
+
+.tags h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tags-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.tag-item {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Reviews */
+.reviews {
+  margin-top: 40px;
+}
+
+.reviews h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.review-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.reviewer-name {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.review-rating {
+  font-size: 1rem;
+  color: #ffc107;
+  margin: 5px 0;
+}
+
+.review-comment {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}

@@ -1,10 +1,13 @@
-// working match case pop unique objects in array with duplicacy increments
-
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
-import { updateCart } from "../reduxEx/myReducer";
+import { updateCart, prouductDetailsCurr } from "../reduxEx/myReducer";
+import { NavLink } from "react-router-dom";
+import ProductDetails from "./ProductDetails";
+import "../css/SingleProduct.css"
 
 function SingleProduct(props) {
+  const [isAnimating, setIsAnimating] = useState(false);
+
   let cart = JSON.parse(JSON.stringify(props.cartItems));
   let FinalProducts = {};
   if (cart.length !== 0) {
@@ -22,16 +25,12 @@ function SingleProduct(props) {
   // Convert object to array
   FinalProducts = Object.values(FinalProducts);
 
-  console.log(FinalProducts);
-
-  // console.log(IDs, 'iddd');
-  console.log(props);
-  console.log(FinalProducts, "finallproduct");
-
   function onClick(data) {
-    console.log("check", data);
     props.update(data);
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 1000); // Reset animation after 1 second
   }
+
   return (
     <>
       {props
@@ -54,12 +53,15 @@ function SingleProduct(props) {
                     <a className="btn btn-outline-dark btn-square" href="">
                       <i className="far fa-heart" />
                     </a>
-                    <a className="btn btn-outline-dark btn-square" href="">
-                      <i className="fa fa-sync-alt" />
-                    </a>
-                    <a className="btn btn-outline-dark btn-square" href="">
-                      <i className="fa fa-search" />
-                    </a>
+                    <NavLink to="/Products/ProductDetails">
+                      <a
+                        className="btn btn-outline-dark btn-square"
+                        onClick={() => props.ProductDetailsPush(value)}
+                        href=""
+                      >
+                        <i className="fa fa-search" />
+                      </a>
+                    </NavLink>
                   </div>
                 </div>
                 <div className="text-center py-4">
@@ -91,6 +93,13 @@ function SingleProduct(props) {
             </div>
           ))
         : null}
+
+      {/* Animation Element */}
+      {isAnimating && (
+        <div className="add-to-cart-animation">
+          <i className="fa fa-shopping-cart add-to-cart-icon" />
+        </div>
+      )}
     </>
   );
 }
@@ -98,12 +107,14 @@ function SingleProduct(props) {
 const mapStateToProps = (state) => {
   return {
     cartItems: state.cart,
+    prouductDetails: state.ProudctDetails,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     update: (data) => dispatch(updateCart(data)), // Dispatch product to Redux store
+    ProductDetailsPush: (data) => dispatch(prouductDetailsCurr(data)),
   };
 };
 

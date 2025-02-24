@@ -13,15 +13,19 @@ function Footer() {
             </p>
             <p className="mb-2">
               <i className="fa fa-map-marker-alt text-primary mr-3" />
-              123 Street, New York, USA
+              New Delhi, India
             </p>
             <p className="mb-2">
               <i className="fa fa-envelope text-primary mr-3" />
               vashistmayankk@gmail.com
             </p>
+            <p className="mb-2">
+              <i className="fab fa-linkedin-in text-primary mr-3" />
+              www.linkedin.com/in/mayank182000
+            </p>
             <p className="mb-0">
               <i className="fa fa-phone-alt text-primary mr-3" />
-              Nioooo yayaya0
+              12345678900
             </p>
           </div>
           <div className="col-lg-8 col-md-12">
@@ -106,7 +110,7 @@ function Footer() {
                   </div>
                 </form>
                 <h6 className="text-secondary text-uppercase mt-4 mb-3">
-                  Follow Us
+                  Social Contacts
                 </h6>
                 <div className="d-flex">
                   <a className="btn btn-primary btn-square mr-2" href="#">
@@ -115,7 +119,11 @@ function Footer() {
                   <a className="btn btn-primary btn-square mr-2" href="#">
                     <i className="fab fa-facebook-f" />
                   </a>
-                  <a className="btn btn-primary btn-square mr-2" href="#">
+                  <a
+                    className="btn btn-primary btn-square mr-2"
+                    href="https://www.linkedin.com/in/mayank182000"
+                    target="_blank"
+                  >
                     <i className="fab fa-linkedin-in" />
                   </a>
                   <a className="btn btn-primary btn-square" href="#">

@@ -1,15 +1,30 @@
 import React from 'react'
 import { connect } from "react-redux";
-
+import { cartDec, cartInc } from '../reduxEx/myReducer';
 
 function Cart(props) {
+  console.log(props)
   const cartItems = props && props.cartItems
   console.log(cartItems, 'carttttttttttt')
   const totalCartItems = cartItems.map((value, index)=>{
-   return  parseInt(value.price - value.price * (value.discountPercentage / 100));
+   return value && value.quantity > 1
+     ? value.quantity *
+         parseInt(value.price - value.price * (value.discountPercentage / 100))
+     : parseInt(value.price - value.price * (value.discountPercentage / 100));
   })
   const subTotal = totalCartItems.reduce((acc, curr) => acc + curr, 0);
   const shipCharge = 10
+
+  function onClickMinus(data){
+    console.log(data, 'quantity update');
+    props.cartItemDecrement(data)
+    console.log(props.cartItems);
+    }
+  function onClickPlus(data){
+    console.log(data, 'quantity update');
+    props.cartItemIncrement(data)
+    console.log(props.cartItems);
+    }
   return (
     <>
       <div className="container-fluid">
@@ -39,40 +54,56 @@ function Cart(props) {
                       </td>
                       <td className="align-middle">
                         ${" "}
-                        {parseInt(
-                          value.price -
-                            value.price * (value.discountPercentage / 100)
-                        )}
+                        {value && value.quantity > 1
+                          ? value.quantity *
+                            parseInt(
+                              value.price -
+                                value.price * (value.discountPercentage / 100)
+                            )
+                          : parseInt(
+                              value.price -
+                                value.price * (value.discountPercentage / 100)
+                            )}
                       </td>
                       <td className="align-middle">
                         <div
                           className="input-group quantity mx-auto"
                           style={{ width: 100 }}
                         >
-                          <div className="input-group-btn">
-                            <button className="btn btn-sm btn-primary btn-minus">
-                              <i className="fa fa-minus" />
-                            </button>
-                          </div>
+                          <a onClick={() => onClickMinus(value)}>
+                            <div className="input-group-btn">
+                              <button className="btn btn-sm btn-primary btn-minus">
+                                <i className="fa fa-minus" />
+                              </button>
+                            </div>
+                          </a>
                           <input
                             type="text"
                             className="form-control form-control-sm bg-secondary border-0 text-center"
-                            defaultValue={1}
+                            value={value.quantity}
                           />
-                          <div className="input-group-btn">
-                            <button className="btn btn-sm btn-primary btn-plus">
-                              <i className="fa fa-plus" />
-                            </button>
-                          </div>
+                          <a onClick={() => onClickPlus(value)}>
+                            <div className="input-group-btn">
+                              <button className="btn btn-sm btn-primary btn-plus">
+                                <i className="fa fa-plus" />
+                              </button>
+                            </div>
+                          </a>
                         </div>
                       </td>
                       <td className="align-middle">
                         <b>
                           ${" "}
-                          {parseInt(
-                            value.price -
-                              value.price * (value.discountPercentage / 100)
-                          )}
+                          {value && value.quantity > 1
+                            ? value.quantity *
+                              parseInt(
+                                value.price -
+                                  value.price * (value.discountPercentage / 100)
+                              )
+                            : parseInt(
+                                value.price -
+                                  value.price * (value.discountPercentage / 100)
+                              )}
                         </b>
                       </td>
                       <td className="align-middle">
@@ -276,4 +307,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch)=>{
+  return {
+    cartItemDecrement: (data) => dispatch(cartDec(data)),
+    cartItemIncrement: (data) => dispatch(cartInc(data))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
