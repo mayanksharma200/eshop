@@ -1,29 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { updateCart, prouductDetailsCurr } from "../reduxEx/myReducer";
 import { NavLink } from "react-router-dom";
-import ProductDetails from "./ProductDetails";
-import "../css/SingleProduct.css"
+import "../css/SingleProduct.css";
 
 function SingleProduct(props) {
+  const [allProducts, setAllProducts] = useState([]); // State to store fetched products
   const [isAnimating, setIsAnimating] = useState(false);
 
-  let cart = JSON.parse(JSON.stringify(props.cartItems));
-  let FinalProducts = {};
-  if (cart.length !== 0) {
-    for (let i = 0; i < cart.length; i++) {
-      let id = cart[i].id;
-
-      if (FinalProducts[id]) {
-        FinalProducts[id].duplicate += 1;
-      } else {
-        FinalProducts[id] = { ...cart[i], duplicate: 1 };
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://dummyjson.com/products");
+        const data = await response.json();
+        setAllProducts(data.products); // Store fetched products in state
+      } catch (error) {
+        console.error("Error fetching products:", error);
       }
-    }
-  }
+    };
 
-  // Convert object to array
-  FinalProducts = Object.values(FinalProducts);
+    fetchProducts();
+  }, []);
+
+  console.log("Fetched Products:", allProducts);
 
   function onClick(data) {
     props.update(data);
@@ -33,9 +32,9 @@ function SingleProduct(props) {
 
   return (
     <>
-      {props
-        ? props.product.map((value, index) => (
-            <div className="col-lg-4 col-md-4 col-sm-6 pb-1" key={value.id}>
+      {allProducts
+        ? allProducts.map((value, index) => (
+            <div className="col-lg-4 col-md-4 col-sm-6 pb-1" key={index}>
               <div className="product-item bg-light mb-4">
                 <div className="product-img position-relative overflow-hidden">
                   <img
@@ -104,18 +103,11 @@ function SingleProduct(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    cartItems: state.cart,
-    prouductDetails: state.ProudctDetails,
-  };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    update: (data) => dispatch(updateCart(data)), // Dispatch product to Redux store
+    update: (data) => dispatch(updateCart(data)),
     ProductDetailsPush: (data) => dispatch(prouductDetailsCurr(data)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);
+export default connect(null, mapDispatchToProps)(SingleProduct);

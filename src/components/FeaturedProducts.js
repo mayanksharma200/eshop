@@ -2,21 +2,22 @@ import React, { useState, useEffect } from "react";
 import SingleProduct from "./SingleProduct";
 
 function FeaturedProducts() {
-  const [products, setProducts] = useState([]);
+  let allProducts;
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch("https://dummyjson.com/products");
-        const data = await response.json();
-        setProducts(data.products); // Assuming the API returns an object with a `products` array
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await fetch("https://dummyjson.com/products");
+  //       const data = await response.json();
+  //       // setProducts(data.products); // Assuming the API returns an object with a `products` array
+  //       allProducts = data.products
+  //     } catch (error) {
+  //       console.error("Error fetching products:", error);
+  //     }
+  //   };
 
-    fetchProducts();
-  }, []);
+  //   fetchProducts();
+  // }, []);
 
   return (
     <div className="container-fluid pt-5 pb-3">
@@ -25,7 +26,7 @@ function FeaturedProducts() {
       </h2>
       <div className="row px-xl-5">
        
-          <SingleProduct product={products} />
+          <SingleProduct product={allProducts} />
       </div>
     </div>
   );
