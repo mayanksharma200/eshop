@@ -296,3 +296,30 @@
   color: #666;
   margin: 0;
 }
+
+/* Add this to your CSS file */
+@keyframes addToCartAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, -100vh) scale(10);
+    opacity: 0;
+  }
+}
+
+.add-to-cart-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: addToCartAnimation 1s ease-in-out forwards;
+}
+
+/* Optional: Style for the icon or element that will be animated */
+.add-to-cart-icon {
+  font-size: 24px;
+  color: green;
+}

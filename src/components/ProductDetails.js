@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import Navbar from "./Navbar";
 import Topbar from "./Topbar";
 import "./ProductDetails.css"; // Import the custom CSS file
+import { updateCart } from "../reduxEx/myReducer";
 
 function ProductDetails(props) {
+    const [isAnimating, setIsAnimating] = useState(false);
   console.log(props);
 
 
@@ -28,6 +30,12 @@ function ProductDetails(props) {
       prevIndex === 0 ? props.prouductDetails[0].images.length - 1 : prevIndex - 1
     );
   };
+
+    function onClick(data) {
+      props.update(data);
+      setIsAnimating(true);
+      setTimeout(() => setIsAnimating(false), 1000); // Reset animation after 1 second
+    }
 
   return (
     <>
@@ -55,17 +63,23 @@ function ProductDetails(props) {
           {/* Product Details */}
           <div className="product-info">
             <h1 className="product-title">{props.prouductDetails[0].title}</h1>
-            <h2 className="product-brand">by {props.prouductDetails[0].brand}</h2>
+            <h2 className="product-brand">
+              by {props.prouductDetails[0].brand}
+            </h2>
 
             {/* Product Rating */}
             <div className="product-rating">
-              <span className="rating-badge">{props.prouductDetails[0].rating} / 5</span>
+              <span className="rating-badge">
+                {props.prouductDetails[0].rating} / 5
+              </span>
             </div>
 
             {/* Product Price and Discount */}
             <div className="price-section">
               <p className="discounted-price">${discountedPrice.toFixed(2)}</p>
-              <p className="original-price">${props.prouductDetails[0].price}</p>
+              <p className="original-price">
+                ${props.prouductDetails[0].price}
+              </p>
               <p className="discount-percentage">
                 Save {props.prouductDetails[0].discountPercentage}%
               </p>
@@ -74,13 +88,19 @@ function ProductDetails(props) {
             {/* Product Availability and Stock */}
             <div className="availability">
               <p className="availability-status">
-                {props.prouductDetails[0].availabilityStatus} ({props.prouductDetails[0].stock} in stock)
+                {props.prouductDetails[0].availabilityStatus} (
+                {props.prouductDetails[0].stock} in stock)
               </p>
             </div>
 
             {/* Add to Cart and Buy Now Buttons */}
             <div className="action-buttons">
-              <button className="add-to-cart">Add to Cart</button>
+              <button
+                className="add-to-cart"
+                onClick={() => onClick(props.prouductDetails[0])}
+              >
+                Add to Cart
+              </button>
               <button className="buy-now">Buy Now</button>
             </div>
 
@@ -142,6 +162,12 @@ function ProductDetails(props) {
           ))}
         </div>
       </div>
+      {/* Animation Element */}
+      {isAnimating && (
+        <div className="add-to-cart-animation">
+          <i className="fa fa-shopping-cart add-to-cart-icon" />
+        </div>
+      )}
     </>
   );
 }
@@ -152,4 +178,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ProductDetails);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    update: (data) => dispatch(updateCart(data)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);

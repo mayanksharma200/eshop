@@ -13,7 +13,7 @@ function Cart(props) {
      : parseInt(value.price - value.price * (value.discountPercentage / 100));
   })
   const subTotal = totalCartItems.reduce((acc, curr) => acc + curr, 0);
-  const shipCharge = 10
+  const shipCharge = cartItems.length !== 0 ? 10 : 0
 
   function onClickMinus(data){
     console.log(data, 'quantity update');
