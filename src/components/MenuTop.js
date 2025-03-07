@@ -1,10 +1,10 @@
-import React from 'react'
-import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 function MenuTop(props) {
   const cartCount = props.cartItems.length;
-  console.log(cartCount, 'MenuTopp')
+  console.log(cartCount, "MenuTopp");
   return (
     <>
       <div className="row bg-secondary py-1 px-xl-5">
@@ -117,4 +117,4 @@ const mapStateToProps = (state) => {
     cartItems: state.cart,
   };
 };
-export default connect(mapStateToProps)(MenuTop); 
+export default connect(mapStateToProps)(MenuTop);

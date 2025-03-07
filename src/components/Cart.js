@@ -1,10 +1,12 @@
 import React from 'react'
 import { connect } from "react-redux";
 import { cartDec, cartInc } from '../reduxEx/myReducer';
+import { NavLink } from "react-router-dom";
 
 function Cart(props) {
   console.log(props)
   const cartItems = props && props.cartItems
+  let flag = cartItems.length === 0;
   console.log(cartItems, 'carttttttttttt')
   const totalCartItems = cartItems.map((value, index)=>{
    return value && value.quantity > 1
@@ -113,147 +115,6 @@ function Cart(props) {
                       </td>
                     </tr>
                   ))}
-
-                {/* <tr>
-                  <td className="align-middle">
-                    <img src="img/product-2.jpg" alt="" style={{ width: 50 }} />{" "}
-                    Product Name
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <div
-                      className="input-group quantity mx-auto"
-                      style={{ width: 100 }}
-                    >
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-minus">
-                          <i className="fa fa-minus" />
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control form-control-sm bg-secondary border-0 text-center"
-                        defaultValue={1}
-                      />
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-plus">
-                          <i className="fa fa-plus" />
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <button className="btn btn-sm btn-danger">
-                      <i className="fa fa-times" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="align-middle">
-                    <img src="img/product-3.jpg" alt="" style={{ width: 50 }} />{" "}
-                    Product Name
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <div
-                      className="input-group quantity mx-auto"
-                      style={{ width: 100 }}
-                    >
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-minus">
-                          <i className="fa fa-minus" />
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control form-control-sm bg-secondary border-0 text-center"
-                        defaultValue={1}
-                      />
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-plus">
-                          <i className="fa fa-plus" />
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <button className="btn btn-sm btn-danger">
-                      <i className="fa fa-times" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="align-middle">
-                    <img src="img/product-4.jpg" alt="" style={{ width: 50 }} />{" "}
-                    Product Name
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <div
-                      className="input-group quantity mx-auto"
-                      style={{ width: 100 }}
-                    >
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-minus">
-                          <i className="fa fa-minus" />
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control form-control-sm bg-secondary border-0 text-center"
-                        defaultValue={1}
-                      />
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-plus">
-                          <i className="fa fa-plus" />
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <button className="btn btn-sm btn-danger">
-                      <i className="fa fa-times" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="align-middle">
-                    <img src="img/product-5.jpg" alt="" style={{ width: 50 }} />{" "}
-                    Product Name
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <div
-                      className="input-group quantity mx-auto"
-                      style={{ width: 100 }}
-                    >
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-minus">
-                          <i className="fa fa-minus" />
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control form-control-sm bg-secondary border-0 text-center"
-                        defaultValue={1}
-                      />
-                      <div className="input-group-btn">
-                        <button className="btn btn-sm btn-primary btn-plus">
-                          <i className="fa fa-plus" />
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="align-middle">$150</td>
-                  <td className="align-middle">
-                    <button className="btn btn-sm btn-danger">
-                      <i className="fa fa-times" />
-                    </button>
-                  </td>
-                </tr> */}
               </tbody>
             </table>
           </div>
@@ -289,9 +150,14 @@ function Cart(props) {
                   <h5>Total</h5>
                   <h5>$ {subTotal + shipCharge}</h5>
                 </div>
-                <button className="btn btn-block btn-primary font-weight-bold my-3 py-3">
-                  Proceed To Checkout
-                </button>
+                <NavLink to="/Checkout">
+                  <button
+                    disabled={flag}
+                    className="btn btn-block btn-primary font-weight-bold my-3 py-3"
+                  >
+                    Proceed To Checkout
+                  </button>
+                </NavLink>
               </div>
             </div>
           </div>
